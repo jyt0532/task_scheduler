@@ -124,6 +124,9 @@ void func3(){
 void func4(){
     cout << "Excuting func4" << endl;
 }
+void func5(){
+    cout << "Excuting func5" << endl;
+}
 
 int main(){
     TaskScheduler ts;
@@ -131,6 +134,8 @@ int main(){
     ts.addTask(func2, 3);
     ts.addTask(func3, 5);
     ts.addTask(func4, 10);
+    this_thread::sleep_for(chrono::milliseconds(4000));
+    ts.addTask(func5, 3);
     this_thread::sleep_for(chrono::milliseconds(20000));
     return 0;
 }
